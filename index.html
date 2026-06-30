@@ -1,2 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Attack</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="game-header">
+        <h1>Math Attack</h1>
+        <h2>Created by Oli</h2>
+    </header>
+
+    <main class="game-container">
+
+        <!-- Players -->
+        <section class="players-panel">
+
+            <div class="player-card blue active" id="player-blue">
+                <h3>Blue</h3>
+                <p>Position: <span id="blue-position">0</span></p>
+                <p>Stars: <span id="blue-stars">0</span> ⭐</p>
+                <p>Last Roll: <span id="blue-roll">-</span></p>
+            </div>
+
+            <div class="player-card orange" id="player-orange">
+                <h3>Orange</h3>
+                <p>Position: <span id="orange-position">0</span></p>
+                <p>Stars: <span id="orange-stars">0</span> ⭐</p>
+                <p>Last Roll: <span id="orange-roll">-</span></p>
+            </div>
+
+            <div class="player-card yellow" id="player-yellow">
+                <h3>Yellow</h3>
+                <p>Position: <span id="yellow-position">0</span></p>
+                <p>Stars: <span id="yellow-stars">0</span> ⭐</p>
+                <p>Last Roll: <span id="yellow-roll">-</span></p>
+            </div>
+
+        </section>
+
+        <!-- Board -->
+        <section class="board-section">
+
+            <div class="board" id="board">
+
+                <div class="space" data-space="0">START</div>
+                <div class="space" data-space="1">1</div>
+                <div class="space" data-space="2">2</div>
+                <div class="space" data-space="3">3</div>
+                <div class="space" data-space="4">4</div>
+                <div class="space" data-space="5">5</div>
+                <div class="space" data-space="6">6</div>
+                <div class="space" data-space="7">7</div>
+                <div class="space" data-space="8">8</div>
+                <div class="space" data-space="9">9</div>
+                <div class="space" data-space="10">10</div>
+                <div class="space" data-space="11">11</div>
+                <div class="space" data-space="12">12</div>
+                <div class="space" data-space="13">13</div>
+                <div class="space finish" data-space="14">MATH ATTACK</div>
+
+            </div>
+
+        </section>
+
+        <!-- Controls -->
+        <section class="controls">
+
+            <button id="opening-roll-button">
+                Opening Roll
+            </button>
+
+            <button id="roll-button" disabled>
+                Roll Two Dice
+            </button>
+
+            <div class="dice-display">
+
+                <div class="die">
+                    <span id="die-one">-</span>
+                </div>
+
+                <div class="die">
+                    <span id="die-two">-</span>
+                </div>
+
+            </div>
+
+            <div class="total-roll">
+                Total:
+                <span id="dice-total">-</span>
+            </div>
+
+        </section>
+
+        <!-- Maths Question -->
+        <section class="question-panel hidden" id="question-panel">
+
+            <h3>Math Challenge</h3>
+
+            <p id="question-text">
+                Question will appear here.
+            </p>
+
+            <input
+                type="number"
+                id="answer-input"
+                placeholder="Your answer"
+                autocomplete="off"
+            >
+
+            <button id="submit-answer">
+                Submit Answer
+            </button>
+
+        </section>
+
+        <!-- Status -->
+        <section class="status-panel">
+
+            <h3>Game Status</h3>
+
+            <p id="status-message">
+                Click "Opening Roll" to determine who starts.
+            </p>
+
+        </section>
+
+        <!-- Rules -->
+        <section class="rules">
+
+            <h3>Game Rules</h3>
+
+            <ul>
+                <li>Three players: Blue, Orange and Yellow.</li>
+                <li>Each player rolls once to determine who starts.</li>
+                <li>Highest opening roll goes first.</li>
+                <li>Roll two dice each turn.</li>
+                <li>Landing exactly on 14 triggers a random maths question.</li>
+                <li>Answer correctly to earn one star.</li>
+                <li>Use the Oli Bounce Rule if a roll goes past 14.</li>
+                <li>First player to earn four stars wins.</li>
+            </ul>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
